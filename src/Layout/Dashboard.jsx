@@ -4,11 +4,11 @@ import EntryTable from '../components/EntryTable';
 
 const Dashboard = () => {
     return (
-        <div class="grid grid-cols-12 gap-4">
-            <div class="col-span-3 bg-slate-900 w-full">
+        <div className="grid grid-cols-12 gap-4 m-10">
+            <div className="col-span-3  w-full">
                 <MenuBar />
             </div>
-            <div class="col-span-9 bg-slate-700 w-full">
+            <div className="col-span-9  w-full">
                 <EntryTable />
             </div>
         </div>
