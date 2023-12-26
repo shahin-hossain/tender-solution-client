@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaEye, FaRegTrashAlt } from 'react-icons/fa';
 import { BiEdit } from "react-icons/bi";
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const EntryTable = () => {
     const [tenders, setTenders] = useState([]);
@@ -49,7 +50,7 @@ const EntryTable = () => {
     return (
         <div>
             <h2 className='text-3xl font-bold text-center mb-5'>Tender Table</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto border-2 border-neutral-700">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -70,8 +71,8 @@ const EntryTable = () => {
                                 <td>{tender.caller}</td>
                                 <td className='flex gap-2'>
                                     <span><FaEye /></span>
-                                    <span><BiEdit /></span>
-                                    <span onClick={() => handleDelete(tender._id)}><FaRegTrashAlt /></span>
+                                    <Link to={`/update-tender/${tender._id}`} className='hover:text-sky-600'><span><BiEdit /></span></Link>
+                                    <span onClick={() => handleDelete(tender._id)} className='hover:text-red-600'><FaRegTrashAlt /></span>
                                 </td>
                             </tr>
                         )}
